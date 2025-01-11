@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-import requests
 import requests.exceptions
 import urllib.parse
 from collections import deque
@@ -23,7 +22,7 @@ try:
         parts = urllib.parse.urlsplit(url)
         base_url = '{0.scheme}://{0.netloc}'.format(parts)
 
-        path = url[:url.rfind('/')+1] if '/' in parts.path else url
+        path = url[:url.rfind('/') + 1] if '/' in parts.path else url
 
         print('[%d] Processing %s' % (count, url))
         try:
